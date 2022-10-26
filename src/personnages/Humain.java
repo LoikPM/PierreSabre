@@ -29,11 +29,11 @@ public class Humain {
 	}
 	
 	public void direBonjour() {
-		System.out.printf("Bonjour ! Je m’appelle %s et j'aime boire du %s !\n", getNom(), getBoisson());
+		System.out.printf("Bonjour ! Je m’appelle %s et j'aime boire du %s !\n.", getNom(), getBoisson());
 	}
 	
 	public void boire() {
-		System.out.printf("Mmmm, un bon verre de %s ! GLOUPS !\n", getBoisson());
+		System.out.printf("Mmmm, un bon verre de %s ! GLOUPS !\n.", getBoisson());
 	}
 	
 	public void gagnerArgent(int gain) {
@@ -46,10 +46,10 @@ public class Humain {
 	
 	public void acheter(String bien, int prix){
 		if (money<=prix) {
-			System.out.printf("Je n'ai plus que %d sous en poche. Je ne peux même pas m'offrir %s à %d sous\n",getMoney(),bien,prix);
+			System.out.printf("Je n'ai plus que %d sous en poche. Je ne peux même pas m'offrir %s à %d sous\n.",getMoney(),bien,prix);
 		}
 		else {
-			System.out.printf("J'ai %d sous en poche. Je vais pouvoir m'offrir %s à %d sous\n",getMoney(),bien,prix);
+			System.out.printf("J'ai %d sous en poche. Je vais pouvoir m'offrir %s à %d sous\n.",getMoney(),bien,prix);
 			this.perdreArgent(prix);
 		}
 	}
