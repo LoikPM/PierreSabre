@@ -1,9 +1,9 @@
 package personnages;
 
 public class Humain {
-	private String nom;
-	private String boissonFavorite;
-	private int money;
+	protected String nom;
+	protected String boissonFavorite;
+	protected int money;
 	
 	public Humain(String nom, String boissonFavorite, int money) {
 		this.nom=nom;
@@ -12,9 +12,7 @@ public class Humain {
 	}
 
 
-	private void parler(String texte) {
-		System.out.printf(texte);
-	}
+	
 	
 	public String getNom() {
 		return nom;
@@ -28,6 +26,8 @@ public class Humain {
 		return money;
 	}
 	
+	
+	
 	public void direBonjour() {
 		System.out.printf("Bonjour ! Je m’appelle %s et j'aime boire du %s !\n.", getNom(), getBoisson());
 	}
@@ -37,15 +37,15 @@ public class Humain {
 	}
 	
 	public void gagnerArgent(int gain) {
-		money = money + gain;
+		money = getMoney() + gain;
 	}
 	
 	public void perdreArgent(int perte) {
-		money = money - perte;
+		money = getMoney() - perte;
 	}
 	
 	public void acheter(String bien, int prix){
-		if (money<=prix) {
+		if (getMoney()<=prix) {
 			System.out.printf("Je n'ai plus que %d sous en poche. Je ne peux même pas m'offrir %s à %d sous\n.",getMoney(),bien,prix);
 		}
 		else {
