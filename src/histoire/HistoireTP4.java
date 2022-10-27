@@ -10,7 +10,7 @@ public class HistoireTP4 {
 		Commercant marco;
 		marco = new Commercant("Marco", "thé", 20);
 		Yakuza yaku;
-		yaku = new Yakuza("Yaku le Noir","whisky",30,"Warsong",0);
+		yaku = new Yakuza("Yaku le Noir","whisky",30,"Warsong",4);
 		Ronin roro;
 		roro = new Ronin("Roro","shocku",60,1);
 		
@@ -30,9 +30,11 @@ public class HistoireTP4 {
 //		yaku.parler(" Marco, si tu tiens à la vie donne moi ta bourse !");
 //		yaku.estorquer(marco);
 
-		roro.direBonjour();
-		roro.donner(marco);
-	
+//		roro.direBonjour();
+//		roro.donner(marco);
+
+		roro.provoquer(yaku);
+		
 	}
 	
 	
