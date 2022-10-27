@@ -13,11 +13,11 @@ public class Humain {
 
 	
 	private String prendreParole() {
-		return "(" + nom + ") : ";
+		return "(" + nom + ") ";
 		}
 	
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "«" + texte + "»");
+		System.out.println(prendreParole() + "- «" + texte + "»");
 		}
 
 	
