@@ -11,7 +11,8 @@ public class HistoireTP4 {
 		marco = new Commercant("Marco", "thé", 20);
 		Yakuza yaku;
 		yaku = new Yakuza("Yaku le Noir","whisky",30,"Warsong",0);
-		
+		Ronin roro;
+		roro = new Ronin("Roro","shocku",60,1);
 		
 //		prof.direBonjour();
 //		prof.acheter("une boisson",12);
@@ -24,11 +25,13 @@ public class HistoireTP4 {
 //		marco.recevoir(15);
 //		marco.boire();
 
-		yaku.direBonjour();
-		yaku.parler("Tiens, tiens, ne serait-ce pas un faible marchand qui passe par là ?");
-		yaku.parler(" Marco, si tu tiens à la vie donne moi ta bourse !");
-		yaku.estorquer(marco);
-		
+//		yaku.direBonjour();
+//		yaku.parler("Tiens, tiens, ne serait-ce pas un faible marchand qui passe par là ?");
+//		yaku.parler(" Marco, si tu tiens à la vie donne moi ta bourse !");
+//		yaku.estorquer(marco);
+
+		roro.direBonjour();
+		roro.donner(marco);
 	
 	}
 	

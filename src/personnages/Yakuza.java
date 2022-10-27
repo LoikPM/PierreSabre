@@ -1,5 +1,5 @@
 package personnages;
-import personnages.Commercant;
+import personnages.*;
 
 public class Yakuza extends Humain {
 	private String clan;
@@ -10,8 +10,6 @@ public class Yakuza extends Humain {
 		this.clan=clan;
 		this.reputation=0;
 	}
-	
-	
 	
 	public void estorquer (Commercant victime) {
 		money = money + victime.getMoney();
