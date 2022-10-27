@@ -3,7 +3,7 @@ package personnages;
 public class Humain {
 	private String nom;
 	private String boissonFavorite;
-	private int money;
+	public int money;
 	
 	public Humain(String nom, String boissonFavorite, int money) {
 		this.nom=nom;
@@ -11,6 +11,14 @@ public class Humain {
 		this.money=money;
 	}
 
+	
+	private String prendreParole() {
+		return "(" + nom + ") : ";
+		}
+	
+	public void parler(String texte) {
+		System.out.println(prendreParole() + "«" + texte + "»");
+		}
 
 	
 	
@@ -29,11 +37,11 @@ public class Humain {
 	
 	
 	public void direBonjour() {
-		System.out.printf("Bonjour ! Je m’appelle %s et j'aime boire du %s !\n.", getNom(), getBoisson());
+		parler("Bonjour ! Je m’appelle " + getNom() + " et j'aime boire du " + getBoisson() + " !");
 	}
 	
 	public void boire() {
-		System.out.printf("Mmmm, un bon verre de %s ! GLOUPS !\n.", getBoisson());
+		parler("Mmmm, un bon verre de " + getBoisson() + " ! GLOUPS !");
 	}
 	
 	public void gagnerArgent(int gain) {
@@ -46,10 +54,10 @@ public class Humain {
 	
 	public void acheter(String bien, int prix){
 		if (getMoney()<=prix) {
-			System.out.printf("Je n'ai plus que %d sous en poche. Je ne peux même pas m'offrir %s à %d sous\n.",getMoney(),bien,prix);
+			parler("Je n'ai plus que " + getMoney() + " sous en poche. Je ne peux même pas m'offrir " + bien + " à " + prix + " sous");
 		}
 		else {
-			System.out.printf("J'ai %d sous en poche. Je vais pouvoir m'offrir %s à %d sous\n.",getMoney(),bien,prix);
+			parler("J'ai " + getMoney() + " sous en poche. Je vais pouvoir m'offrir " + bien + " à " + prix + " sous");
 			this.perdreArgent(prix);
 		}
 	}
