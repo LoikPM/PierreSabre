@@ -1,6 +1,4 @@
 package personnages;
-import personnages.*;
-
 
 public class Ronin extends Humain {
 	private int honneur;

@@ -1,5 +1,4 @@
 package personnages;
-import personnages.*;
 
 public class Yakuza extends Humain {
 	private String clan;
@@ -8,7 +7,7 @@ public class Yakuza extends Humain {
 	public Yakuza(String nom, String boissonFavorite, int money, String clan, int reputation) {
 		super(nom, boissonFavorite, money);
 		this.clan=clan;
-		this.reputation=4;
+		this.reputation=0;
 	}
 	
 	public String getClan() {
@@ -20,10 +19,11 @@ public class Yakuza extends Humain {
 	}
 	
 	public void estorquer (Commercant victime) {
+		parler(victime.getNom() + ", si tu tiens à la vie donne moi ta bourse !");
 		money = money + victime.getMoney();
-		victime.seFaireEstorquer();
 		parler("J’ai piqué les " + victime.getMoney() + " sous de " + victime.getNom() + ", ce"
 				+ " qui me fait " + getMoney() + " sous dans ma poche. Hi ! Hi !");
+		victime.seFaireEstorquer();
 		reputation++;
 	}
 	
