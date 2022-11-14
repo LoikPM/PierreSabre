@@ -10,6 +10,7 @@ public class Yakuza extends Humain {
 		this.reputation=0;
 	}
 	
+	
 	public String getClan() {
 		return clan;
 	}

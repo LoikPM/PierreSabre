@@ -5,8 +5,7 @@ public class Commercant extends Humain {
 	public Commercant(String nom, String boissonFavorite, int money) {
 		super(nom, boissonFavorite, money);
 	}
-	
-	
+
 	
 	public void recevoir(int argent) {
 		money = getMoney() + argent;
