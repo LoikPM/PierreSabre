@@ -1,11 +1,15 @@
 package personnages;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+
 public class Humain {
 	private String nom;
 	private String boissonFavorite;
 	public int money;
 	public int nbConnaissances = 0;
-	private String[] memoire=new String[30];
+	public String[] memoire = new String[30];
 	
 	public Humain(String nom, String boissonFavorite, int money) {
 		this.nom=nom;
@@ -29,22 +33,19 @@ public class Humain {
 	
 	//_________________________________PARLER______________________________________________________
 	
-	private String prendreParole() {
-		return "(" + nom + ") ";
-		}
 	
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "- " + texte);
-		}
+		System.out.printf("("+getNom()+")"+" - "+texte);
+	}
 	
 	public void direBonjour() {
-		parler("Bonjour ! Je m’appelle " + getNom() + " et j'aime boire du " + getBoisson() + " !");
+		parler("Bonjour ! Je m’appelle " + getNom() + " et j'aime boire du " + getBoisson() + " !\n");
 	}
 	
 	//_________________________________BOIRE______________________________________________________
 	
 	public void boire() {
-		parler("Mmmm, un bon verre de " + getBoisson() + " ! GLOUPS !");
+		parler("Mmmm, un bon verre de " + getBoisson() + " ! GLOUPS !\n");
 	}
 	
 	
@@ -82,29 +83,29 @@ public class Humain {
 			memoire[memoire.length-1]=autreHumain.getNom();
 		}		
 	}
-
+	
 	public void repondre(Humain autreHumain){
 		this.direBonjour();
-		memoriser(autreHumain);
 	}
 	
 	public void faireConnaissanceAvec(Humain autreHumain) {
-		System.out.printf("Le " + this.getClass() + " rencontre le " + autreHumain.getClass());
 		this.direBonjour();
 		autreHumain.repondre(this);
+		autreHumain.memoriser(this);
 		this.memoriser(autreHumain);
 		
 	}
 	
-	public void listerConnaissance() {
-		System.out.print("\n");
-		System.out.printf("(" + this.getNom() + ") - Je connais beaucoup de monde dont :");
-		for (int i=0; i<nbConnaissances; i++) {
-			if (i==nbConnaissances-1) {
-				System.out.printf(" %s.", memoire[i]);
-			} else {
-				System.out.printf(" %s,", memoire[i]);
+	public void listerConnaissance(){
+		parler("Je connais beaucoup de monde dont :");
+		for (int i =0; i<nbConnaissances; i++){
+			if (i == nbConnaissances-1){
+				System.out.printf(" %s.\n",memoire[i]);
+			}
+			else {
+				System.out.printf(" %s,",memoire[i]);
 			}
 		}
 	}
+	
 }
