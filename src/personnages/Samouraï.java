@@ -22,4 +22,6 @@ public class Samouraï extends Humain {
 	public void boire(String boisson) {
 		parler("Qu'est-ce que je vais choisir comme boisson ? Tiens je vais prendre " + boisson + ".\n");
 	}
+	
+	
 }
