@@ -3,9 +3,8 @@ import personnages.*;
 
 public class Traître extends Samouraï {
 	public int traitrise = 0;
-	public Traître(String nom, String boissonFavorite, String seigneur, int money, int traitrise) {
+	public Traître(String nom, String boissonFavorite, String seigneur, int money) {
 		super(nom, boissonFavorite, seigneur, money);
-		this.traitrise=traitrise;
 	}
 	
 	@Override

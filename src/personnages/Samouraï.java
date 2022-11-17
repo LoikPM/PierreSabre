@@ -12,7 +12,7 @@ public class Samouraï extends Humain {
 		return seigneur;
 	}
 	
-	
+
 	@Override
 	public void direBonjour() {
 		parler("Bonjour ! Je m’appelle " + getNom() + " et j'aime boire du " + getBoisson() + " !\nJe suis fier de servir le seigneur " + getSeigneur() + "\n");

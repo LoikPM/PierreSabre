@@ -15,9 +15,9 @@ public class HistoireTP5 {
 		 Ronin roro;
 		 roro = new Ronin("Roro", "shochu", 60, 1);
 		Traître akimoto;
-		akimoto = new Traître("Akimoto", "saké", "Miyamoto", 80, 3);
+		akimoto = new Traître("Akimoto", "saké", "Miyamoto", 80);
 		Traître masako;
-		masako = new Traître("Masako", "whisky", "Miyamoto", 100, 0);
+		masako = new Traître("Masako", "whisky", "Miyamoto", 100);
 
 		masako.faireLeGentil();
 		masako.ranconner(kumi);

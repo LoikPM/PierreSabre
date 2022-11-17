@@ -1,8 +1,5 @@
 package personnages;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
 
 public class Humain {
 	private String nom;
