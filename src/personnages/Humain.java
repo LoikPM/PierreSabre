@@ -9,7 +9,7 @@ public class Humain {
 	private String boissonFavorite;
 	public int money;
 	public int nbConnaissances = 0;
-	public String[] memoire = new String[30];
+	public Humain[] memoire = new Humain[30];
 	
 	public Humain(String nom, String boissonFavorite, int money) {
 		this.nom=nom;
@@ -74,13 +74,13 @@ public class Humain {
 	
 	public void memoriser(Humain autreHumain) {
 		if (nbConnaissances < memoire.length) {
-			memoire[nbConnaissances]=autreHumain.getNom();
+			memoire[nbConnaissances]=autreHumain;
 			nbConnaissances+=1;
 		} else {
 			for (int i=0; i<(memoire.length-1); i++) {
 				memoire[i]=memoire[i+1];
 			}
-			memoire[memoire.length-1]=autreHumain.getNom();
+			memoire[memoire.length-1]=autreHumain;
 		}		
 	}
 	
@@ -100,10 +100,10 @@ public class Humain {
 		parler("Je connais beaucoup de monde dont :");
 		for (int i =0; i<nbConnaissances; i++){
 			if (i == nbConnaissances-1){
-				System.out.printf(" %s.\n",memoire[i]);
+				System.out.printf(" %s.\n",memoire[i].getNom());
 			}
 			else {
-				System.out.printf(" %s,",memoire[i]);
+				System.out.printf(" %s,",memoire[i].getNom());
 			}
 		}
 	}

@@ -28,4 +28,23 @@ public class Traître extends Samouraï {
 			parler(" Mince je ne peux plus rançonner personne sinon un samouraï risque de me démasquer !\n");
 		}
 	}
+	
+	public void faireLeGentil() {
+			if (nbConnaissances<1) {
+				parler("Je ne peux faire ami ami avec personne car je ne connais personne ! Snif.\n");
+			} else {
+				int don = this.getMoney() / 20;
+				Humain ami = this.memoire[nbConnaissances-1];
+				String nomAmi = ami.getNom();
+				parler("Il faut absolument remonter ma cote de confiance. Je vais faire ami-ami avec "
+						+ nomAmi + ".\n");
+				parler("Bonjour l'ami, je voudrais vous aider en vous donnant " + don + " sous.\n");
+				ami.gagnerArgent(don);
+				this.perdreArgent(don);
+				ami.parler("Merci " + this.getNom() + ". Vous êtes quelqu'un de bien.\n");
+				if (traitrise>1) {
+					traitrise--;
+				}
+			}
+	}
 }
